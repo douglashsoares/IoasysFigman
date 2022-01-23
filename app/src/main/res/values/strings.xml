@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">IoasysFigman</string>
+    <string name="enter_btn">Enter</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="error_txt_login_password">Email e/ou senha incorretos.</string>
+
+</resources>
