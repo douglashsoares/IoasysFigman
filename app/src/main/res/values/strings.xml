@@ -4,5 +4,7 @@
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="error_txt_login_password">Email e/ou senha incorretos.</string>
+    <string name="book_txt">Book</string>
+
 
 </resources>

@@ -1,5 +1,6 @@
 package br.com.douglas.ioasysfigman
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
         val button = findViewById<MaterialButton>(R.id.btnEnter)
 
         button.setOnClickListener{
-            txtError.visibility = View.VISIBLE
+            val intent = Intent(this,BookListActivity::class.java)
+            startActivity(intent)
         }
     }
 }
