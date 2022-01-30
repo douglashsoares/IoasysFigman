@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/dev/IoasysFigman/app/src/main/res/drawable/bg_gray_with_corner.xml" value="0.2712962962962963" />
         <entry key="..\:/dev/IoasysFigman/app/src/main/res/drawable/bg_input.xml" value="0.21875" />
-        <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/activity_book_list.xml" value="0.1" />
+        <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/activity_book_list.xml" value="0.22" />
         <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/activity_teste.xml" value="0.2504528985507246" />
+        <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/book_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/dev/IoasysFigman/app/src/main/res/layout/custom_search_input.xml" value="0.2" />
       </map>
     </option>
   </component>
@@ -19,7 +23,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.2" />
       </ProjectState>
     </option>
   </component>

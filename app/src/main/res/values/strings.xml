@@ -1,10 +1,19 @@
 <resources>
+<!--    Login Strings Pagina inicial-->
     <string name="app_name">IoasysFigman</string>
     <string name="enter_btn">Enter</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="error_txt_login_password">Email e/ou senha incorretos.</string>
     <string name="book_txt">Book</string>
+
+<!--    Strings Books Img/Descricao-->
+    <string name="book_title">Crossing the Chasm</string>
+    <string name="book_subtitle">Geoffrey A. Moore</string>
+    <string name="book_pages">150 páginas</string>
+    <string name="book_editor">Editora Loyola</string>
+    <string name="book_date">Publicado em 2020</string>
+
 
 
 </resources>
