@@ -1,7 +1,6 @@
-package br.com.douglas.ioasysfigman.customviews
+package br.com.douglas.ioasysfigman.presentation.ui.customviews
 
 import android.content.Context
-import android.content.pm.Attribution
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout

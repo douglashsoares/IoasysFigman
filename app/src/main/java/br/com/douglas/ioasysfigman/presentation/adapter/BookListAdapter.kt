@@ -1,16 +1,12 @@
-package br.com.douglas.ioasysfigman.adapter
+package br.com.douglas.ioasysfigman.presentation.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import br.com.douglas.ioasysfigman.R
 import br.com.douglas.ioasysfigman.databinding.BookItemBinding
-import br.com.douglas.ioasysfigman.fragment.BookListFragment
-import br.com.douglas.ioasysfigman.models.Book
+import br.com.douglas.ioasysfigman.domain.models.Book
 
 class BookListAdapter(
     private val onBookClickListener: BookClickListener

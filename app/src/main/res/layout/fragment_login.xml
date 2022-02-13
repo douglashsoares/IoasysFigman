@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.LoginFragment">
+    tools:context=".presentation.ui.fragment.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgBackground"
@@ -50,14 +50,15 @@
         app:layout_constraintTop_toBottomOf="@id/imgLogoIoasys"
         app:layout_constraintVertical_chainStyle="packed"
         >
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFildEditEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_input"
-            android:textColor="@color/white"
             android:inputType="textEmailAddress"
-            />
+            android:singleLine="true"
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -78,14 +79,15 @@
         app:layout_constraintTop_toBottomOf="@id/textFieldEmail"
         app:layout_constraintVertical_chainStyle="packed"
         >
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFildEditPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_input"
-            android:textColor="@color/white"
             android:inputType="textPassword"
-            />
+            android:singleLine="true"
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -115,5 +117,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textFieldPassword"
         app:layout_constraintEnd_toEndOf="@id/textFieldPassword"
         />
+
+    <ProgressBar
+        android:id="@+id/progressDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

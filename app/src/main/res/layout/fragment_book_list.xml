@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_book_list"
-    tools:context=".fragment.BookListFragment">
+    tools:context=".presentation.ui.fragment.BookListFragment">
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -38,7 +38,7 @@
 
         />
 
-    <br.com.douglas.ioasysfigman.customviews.CustomSearchInput
+    <br.com.douglas.ioasysfigman.presentation.ui.customviews.CustomSearchInput
         android:id="@+id/edtSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -65,5 +65,18 @@
         tools:listitem="@layout/book_item"
         />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmptyList"
+        style="@style/List_Empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="não encontramos nenhum\n Livro com esses termos"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvBooks"
+        app:layout_constraintVertical_bias="0.25"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

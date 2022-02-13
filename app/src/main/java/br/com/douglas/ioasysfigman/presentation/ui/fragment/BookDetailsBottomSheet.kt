@@ -1,15 +1,14 @@
-package br.com.douglas.ioasysfigman.fragment
+package br.com.douglas.ioasysfigman.presentation.ui.fragment
 
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ImageSpan
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.douglas.ioasysfigman.R
 import br.com.douglas.ioasysfigman.databinding.BottomSheetBookDetailsBinding
-import br.com.douglas.ioasysfigman.models.Book
+import br.com.douglas.ioasysfigman.domain.models.Book
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -70,8 +69,8 @@ class BookDetailsBottomSheet : BottomSheetDialogFragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

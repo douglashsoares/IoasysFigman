@@ -1,6 +1,4 @@
-package br.com.douglas.ioasysfigman.models
-
-import android.icu.number.IntegerWidth
+package br.com.douglas.ioasysfigman.domain.models
 
 data class Book(
     val id: Int,
