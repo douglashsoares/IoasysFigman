@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.douglas.ioasysfigman.R
 import br.com.douglas.ioasysfigman.databinding.BottomSheetBookDetailsBinding
-import br.com.douglas.ioasysfigman.domain.models.Book
+import br.com.douglas.ioasysfigman.domain.model.Book
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -76,7 +76,7 @@ class BookDetailsBottomSheet : BottomSheetDialogFragment() {
 
     companion object{
 
-        fun newInstance(book:Book? = null): BookDetailsBottomSheet{
+        fun newInstance(book: Book? = null): BookDetailsBottomSheet{
            return  BookDetailsBottomSheet().apply {
                 this.book = book
             }

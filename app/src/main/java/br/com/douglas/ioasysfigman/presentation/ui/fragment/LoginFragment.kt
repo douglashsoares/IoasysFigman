@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import br.com.douglas.ioasysfigman.databinding.FragmentLoginBinding
 import br.com.douglas.ioasysfigman.util.ViewState
 import br.com.douglas.ioasysfigman.presentation.viewmodel.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
 
-    private val viewModel : LoginViewModel by viewModels()
+    private val loginViewModel : LoginViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
     }
 
     fun addObservers(){
-       viewModel.loggedUserViewState.observe(viewLifecycleOwner) {state->
+        loginViewModel.loggedUserViewState.observe(viewLifecycleOwner) { state->
             when(state){
                 is ViewState.Success -> {
                     findNavController().navigate(
@@ -42,6 +42,7 @@ class LoginFragment : Fragment() {
                     )
                 }
                 is ViewState.Error -> {
+                    binding.txtError.text = state.throwable.message
                     binding.progressDialog.visibility = View.GONE
                     binding.txtError.visibility = View.VISIBLE
                 }
@@ -57,7 +58,7 @@ class LoginFragment : Fragment() {
     private fun setListener() {
         binding.btnEnter.setOnClickListener {
             binding.run {
-                viewModel.login(
+                loginViewModel.login(
                     textFildEditEmail.text.toString(),
                     textFildEditPassword.text.toString()
                 )
@@ -75,7 +76,7 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewModel.resetViewState()
+        loginViewModel.resetViewState()
         _binding = null
     }
 

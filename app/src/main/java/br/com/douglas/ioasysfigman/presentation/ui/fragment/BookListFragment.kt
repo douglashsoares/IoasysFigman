@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import br.com.douglas.ioasysfigman.presentation.adapter.BookClickListener
 import br.com.douglas.ioasysfigman.presentation.adapter.BookListAdapter
 import br.com.douglas.ioasysfigman.databinding.FragmentBookListBinding
-import br.com.douglas.ioasysfigman.domain.models.Book
-import br.com.douglas.ioasysfigman.domain.models.exception.EmptyBookListException
+import br.com.douglas.ioasysfigman.domain.model.Book
+import br.com.douglas.ioasysfigman.domain.exception.EmptyBookListException
 import br.com.douglas.ioasysfigman.presentation.viewmodel.BookListViewModel
 import br.com.douglas.ioasysfigman.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class BookListFragment : Fragment(), BookClickListener {
@@ -22,7 +22,7 @@ class BookListFragment : Fragment(), BookClickListener {
     private var _binding: FragmentBookListBinding? = null
     private val binding: FragmentBookListBinding get() = _binding!!
 
-    private val viewModel: BookListViewModel by viewModels()
+    private val booksViewModel: BookListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +42,7 @@ class BookListFragment : Fragment(), BookClickListener {
 
     private fun configureListeners() {
         binding.edtSearch.textChangeListener = { input ->
-            viewModel.search(input)
+            booksViewModel.search(input)
         }
     }
 
@@ -52,7 +52,7 @@ class BookListFragment : Fragment(), BookClickListener {
     }
 
     private fun addObserver() {
-        viewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
+        booksViewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
 
             when (state) {
                 is ViewState.Success -> {

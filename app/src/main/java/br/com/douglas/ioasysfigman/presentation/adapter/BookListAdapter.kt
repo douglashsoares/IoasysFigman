@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.douglas.ioasysfigman.databinding.BookItemBinding
-import br.com.douglas.ioasysfigman.domain.models.Book
+import br.com.douglas.ioasysfigman.domain.model.Book
 
 class BookListAdapter(
     private val onBookClickListener: BookClickListener

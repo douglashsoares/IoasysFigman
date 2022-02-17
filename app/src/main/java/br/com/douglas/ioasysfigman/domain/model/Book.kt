@@ -1,4 +1,4 @@
-package br.com.douglas.ioasysfigman.domain.models
+package br.com.douglas.ioasysfigman.domain.model
 
 data class Book(
     val id: Int,

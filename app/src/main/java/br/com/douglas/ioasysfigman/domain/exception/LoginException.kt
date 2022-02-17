@@ -1,4 +1,4 @@
-package br.com.douglas.ioasysfigman.domain.models.exception
+package br.com.douglas.ioasysfigman.domain.exception
 
 import java.lang.Exception
 
