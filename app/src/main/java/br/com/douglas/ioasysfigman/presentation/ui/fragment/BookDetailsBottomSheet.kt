@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import br.com.douglas.ioasysfigman.R
 import br.com.douglas.ioasysfigman.databinding.BottomSheetBookDetailsBinding
 import br.com.douglas.ioasysfigman.domain.model.Book
+import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -60,6 +61,9 @@ class BookDetailsBottomSheet : BottomSheetDialogFragment() {
             tvIsbn10Info.text = book?.isbn10.toString()
             tvisbn13Info.text = book?.isbn13.toString()
             tvIdiomaInfo.text = book?.language.toString()
+            imgBigBook.load(book?.imageUrl){
+                error(R.drawable.img_book)
+            }
 
             val spannableString = SpannableString("  ${book?.review}")
             val imageSpan = ImageSpan(requireContext(), R.drawable.ic_quotes)

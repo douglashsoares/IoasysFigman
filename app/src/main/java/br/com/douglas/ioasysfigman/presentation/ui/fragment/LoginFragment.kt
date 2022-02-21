@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import br.com.douglas.ioasysfigman.databinding.FragmentLoginBinding
 import br.com.douglas.ioasysfigman.util.ViewState
 import br.com.douglas.ioasysfigman.presentation.viewmodel.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
@@ -33,12 +34,12 @@ class LoginFragment : Fragment() {
         addObservers()
     }
 
-    fun addObservers(){
+    private fun addObservers(){
         loginViewModel.loggedUserViewState.observe(viewLifecycleOwner) { state->
             when(state){
                 is ViewState.Success -> {
                     findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToBookListFragment()
+                        LoginFragmentDirections.actionLoginFragmentToBookListFragment(state.data)
                     )
                 }
                 is ViewState.Error -> {

@@ -24,5 +24,9 @@
         android:id="@+id/bookListFragment"
         android:name="br.com.douglas.ioasysfigman.presentation.ui.fragment.BookListFragment"
         android:label="fragment_book_list"
-        tools:layout="@layout/fragment_book_list" />
+        tools:layout="@layout/fragment_book_list" >
+        <argument
+            android:name="accessToken"
+            app:argType="string" />
+    </fragment>
 </navigation>

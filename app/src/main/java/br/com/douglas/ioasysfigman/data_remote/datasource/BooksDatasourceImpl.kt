@@ -1,43 +1,34 @@
 package br.com.douglas.ioasysfigman.data_remote.datasource
 
 import br.com.douglas.ioasysfigman.data.datasource.BooksDatasource
+import br.com.douglas.ioasysfigman.data_remote.mappers.toDomain
+import br.com.douglas.ioasysfigman.data_remote.service.BookService
 import br.com.douglas.ioasysfigman.domain.model.Book
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class BooksDatasourceImpl : BooksDatasource {
+class BooksDatasourceImpl(
+    private val bookService: BookService
+) : BooksDatasource {
 
     override fun getBooks(accessToken: String, query: String?): Flow<List<Book>> = flow {
-        val books: List<Book> = listOf(
-            Book(
-                id = 1,
-                name = "Crossing the chase"
-            ),
-            Book(
-                id = 2,
-                name = "Change By Design"
-            ), Book(
-                id = 3,
-                name = "The Making of a Manager"
-            ),
-            Book(
-                id = 4,
-                name = "Don't Make me Think"
-            ),
-            Book(
-                id = 5,
-                name = "Web Design 181"
-            )
-        )
-        emit(books)
 
-        query?.let {
-            emit(books.filter { book ->
-                book.name.trim().contains(it, ignoreCase = true)
-            })
-        } ?: run {
-            emit(books)
-        }
+        val responce = bookService.getBooks(accessToken = "Bearer $accessToken", page = 1, category = "")
+        if (responce.isSuccessful){
+
+            responce.body()?.data?.let {bookList ->
+                query?.let {
+                    emit(bookList.filter { book ->
+                        book.name?.trim()?.contains(it, ignoreCase = true)?: false
+                    }.toDomain())
+                } ?: run {
+                    emit(bookList.toDomain())
+                }
+            }
+            }
+
+
+
 
     }
 }
