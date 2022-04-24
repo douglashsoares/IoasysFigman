@@ -1,6 +1,7 @@
 package br.com.douglas.ioasysfigman.activity
 
 import android.app.Application
+import br.com.douglas.ioasysfigman.di.dataLocalModule
 import br.com.douglas.ioasysfigman.di.dataModule
 import br.com.douglas.ioasysfigman.di.dataRemoteModule
 import br.com.douglas.ioasysfigman.di.presentationModule
@@ -15,7 +16,8 @@ class MainApplication : Application() {
             modules(
                 presentationModule,
                 dataModule,
-                dataRemoteModule
+                dataRemoteModule,
+                dataLocalModule
             ).androidContext(applicationContext)
         }
 

@@ -1,9 +1,9 @@
 package br.com.douglas.ioasysfigman.di
 
-import br.com.douglas.ioasysfigman.data.datasource.BooksDatasource
-import br.com.douglas.ioasysfigman.data.datasource.LoginDatasource
-import br.com.douglas.ioasysfigman.data_remote.datasource.BooksDatasourceImpl
-import br.com.douglas.ioasysfigman.data_remote.datasource.LoginDatasourceImpl
+import br.com.douglas.ioasysfigman.data.datasource.remote.BooksRemoteDataSource
+import br.com.douglas.ioasysfigman.data.datasource.remote.LoginRemoteDatasource
+import br.com.douglas.ioasysfigman.data_remote.datasource.BooksRemoteDataSourceImpl
+import br.com.douglas.ioasysfigman.data_remote.datasource.LoginRemoteDatasourceImpl
 import br.com.douglas.ioasysfigman.data_remote.service.AuthService
 import br.com.douglas.ioasysfigman.data_remote.service.BookService
 import br.com.douglas.ioasysfigman.data_remote.utils.ApiConstants
@@ -29,11 +29,11 @@ val dataRemoteModule = module {
         WebServicesFactory.providerOkHttpClient()
     }
 
-    single<BooksDatasource> {
-        BooksDatasourceImpl(get())
+    single<BooksRemoteDataSource> {
+        BooksRemoteDataSourceImpl(get())
     }
 
-    single<LoginDatasource> {
-        LoginDatasourceImpl(get())
+    single<LoginRemoteDatasource> {
+        LoginRemoteDatasourceImpl(get())
     }
 }

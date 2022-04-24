@@ -1,15 +1,15 @@
 package br.com.douglas.ioasysfigman.data_remote.datasource
 
-import br.com.douglas.ioasysfigman.data.datasource.BooksDatasource
+import br.com.douglas.ioasysfigman.data.datasource.remote.BooksRemoteDataSource
 import br.com.douglas.ioasysfigman.data_remote.mappers.toDomain
 import br.com.douglas.ioasysfigman.data_remote.service.BookService
 import br.com.douglas.ioasysfigman.domain.model.Book
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class BooksDatasourceImpl(
+class BooksRemoteDataSourceImpl(
     private val bookService: BookService
-) : BooksDatasource {
+) : BooksRemoteDataSource {
 
     override fun getBooks(accessToken: String, query: String?): Flow<List<Book>> = flow {
 
